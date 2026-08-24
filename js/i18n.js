@@ -194,7 +194,16 @@
         if (leadingDecor) el.appendChild(leadingDecor);
         String(value).split('\n').forEach(function (part, index) {
           if (index > 0) el.appendChild(document.createElement('br'));
-          el.appendChild(document.createTextNode(part));
+          part.split(/##(.+?)##/).forEach(function (seg, i) {
+            if (i % 2 === 1) {
+              var mark = document.createElement('span');
+              mark.style.color = '#7fd3ff';
+              mark.textContent = seg;
+              el.appendChild(mark);
+            } else if (seg) {
+              el.appendChild(document.createTextNode(seg));
+            }
+          });
         });
       } catch (e) {}
     });
