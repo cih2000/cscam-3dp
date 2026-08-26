@@ -269,22 +269,22 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div class="family-bar-inner">
       <span class="family-bar-label" data-i18n-text="{&quot;ko&quot;:&quot;CSCAM 기계사업부&quot;,&quot;en&quot;:&quot;CSCAM Machine Division&quot;}">CSCAM 기계사업부</span>
       <nav class="family-bar-nav">
-        <a href="../cscam-cnc/index.html">CNC Controller</a>
-        <a href="../cscam-lms/index.html">LMS Solution</a>
+        <a href="https://cnc.cscam.co.kr/">CNC Controller</a>
+        <a href="https://lms.cscam.co.kr/">LMS Solution</a>
         <a href="#biz-intro" class="active">3D PRINTER</a>
-        <a href="../cscam-engraving/index.html">LASER PATTERNING</a>
-        <a href="../cscam-marking/index.html">MARKING MACHINE</a>
+        <a href="https://laser.cscam.co.kr/">LASER PATTERNING</a>
+        <a href="https://marking.cscam.co.kr/">MARKING MACHINE</a>
       </nav>
     </div>
   </div>
   <div id="mobile-menu-drawer" style="position:fixed;top:101px;left:0;right:0;bottom:0;background:#fff;z-index:99;transform:translateX(100%);transition:all 0.3s ease;display:flex;flex-direction:column;padding:30px;gap:24px;border-top:1px solid #e2e6ec;">
     <!-- Family Site Switcher for Mobile Drawer -->
     <div style="display:flex;flex-wrap:wrap;gap:6px;padding-bottom:20px;margin-bottom:10px;border-bottom:1px solid #e2e6ec;font-size:10.5px;font-weight:700;font-family:'Space Grotesk',sans-serif;">
-      <a href="../cscam-cnc/index.html" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">CNC Controller</a>
-      <a href="../cscam-lms/index.html" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LMS Solution</a>
+      <a href="https://cnc.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">CNC Controller</a>
+      <a href="https://lms.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LMS Solution</a>
       <a href="#biz-intro" onclick="toggleMobileMenu()" style="padding:5px 12px;border-radius:12px;color:#fff;background:#1e5aa8;">3D PRINTER</a>
-      <a href="../cscam-engraving/index.html" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LASER PATTERNING</a>
-      <a href="../cscam-marking/index.html" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">MARKING MACHINE</a>
+      <a href="https://laser.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LASER PATTERNING</a>
+      <a href="https://marking.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">MARKING MACHINE</a>
     </div>
     <a href="#biz-intro" onclick="toggleMobileMenu()" data-i18n-text='{"ko":"사업 소개","en":"Business Overview"}' style="font-size:18px;font-weight:700;color:#212121;">사업 소개</a>
     <a href="#slm" onclick="toggleMobileMenu()" data-i18n-text='{"ko":"SLM 3DP","en":"SLM 3DP"}' style="font-size:18px;font-weight:700;color:#212121;">SLM 3DP</a>
@@ -1627,15 +1627,20 @@ class Component extends DCLogic {
 
 // Family site links: sibling folders on the same host/deployment.
 document.addEventListener("DOMContentLoaded", function() {
+  const isLocal = location.protocol === "file:";
   const familyLinks = document.querySelectorAll(".family-bar-nav a, .drawer a");
   familyLinks.forEach(link => {
     const text = link.textContent.trim().toUpperCase();
-    if (text.includes("3D PRINTER")) {
+    if (text.includes("CNC")) {
+      link.href = isLocal ? "../cscam-cnc/index.html" : "https://cnc.cscam.co.kr/";
+    } else if (text.includes("LMS")) {
+      link.href = isLocal ? "../cscam-lms/index.html" : "https://lms.cscam.co.kr/";
+    } else if (text.includes("3D PRINTER")) {
       link.href = "#biz-intro";
     } else if (text.includes("LASER") || text.includes("TEXTURING") || text.includes("ENGRAVING")) {
-      link.href = "../cscam-engraving/index.html";
+      link.href = isLocal ? "../cscam-engraving/index.html" : "https://laser.cscam.co.kr/";
     } else if (text.includes("MARKING")) {
-      link.href = "../cscam-marking/index.html";
+      link.href = isLocal ? "../cscam-marking/index.html" : "https://marking.cscam.co.kr/";
     }
   });
 });
