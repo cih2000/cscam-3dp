@@ -1624,8 +1624,11 @@ class Component extends DCLogic {
   // Load welcome bubble
   appendInitialWelcome();
 })();
-
+</script>
+<script>
 // Family site links: sibling folders on the same host/deployment.
+// Isolated in its own script block so an error earlier on the page
+// (e.g. in the chatbot widget above) can never prevent this from running.
 document.addEventListener("DOMContentLoaded", function() {
   const isLocal = location.protocol === "file:";
   const isGhPages = location.hostname === "cih2000.github.io";
