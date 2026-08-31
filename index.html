@@ -221,11 +221,11 @@
     .mobile-preview-active #heroSection > div > div > div:last-child:not(.hero-marquee) { display: none !important; }
     /* Family Bar (CSCAM division switcher) */
     .family-bar{background:#05080d;border-bottom:1px solid rgba(255,255,255,.06);}
-    .family-bar-inner{max-width:1320px;margin:0 auto;padding:0 32px;height:32px;display:flex;align-items:center;justify-content:flex-end;gap:2px;overflow-x:auto;scrollbar-width:none;}
+    .family-bar-inner{max-width:1320px;margin:0 auto;padding:0 32px;height:34px;display:flex;align-items:center;justify-content:flex-end;gap:8px;overflow-x:auto;scrollbar-width:none;}
     .family-bar-inner::-webkit-scrollbar{display:none;}
     .family-bar-label{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;letter-spacing:.14em;color:#5b6b85;margin-right:auto;white-space:nowrap;}
-    .family-bar-nav{display:flex;gap:2px;white-space:nowrap;}
-    .family-bar-nav a,.family-bar-nav span{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.02em;padding:6px 12px;border-radius:4px;color:#8b9bb5;transition:all .2s;}
+    .family-bar-nav{display:flex;align-items:center;gap:3px;white-space:nowrap;}
+    .family-bar-nav a,.family-bar-nav span{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.03em;padding:6px 9px;border-radius:4px;color:#8b9bb5;transition:all .2s;}
     .family-bar-nav a:hover{color:#fff;background:rgba(255,255,255,.08);}
     .family-bar-nav a.active{color:#fff;background:#1e5aa8;}
     .family-bar-nav span.disabled{color:#3a4556;cursor:not-allowed;}
@@ -269,22 +269,24 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div class="family-bar-inner">
       <span class="family-bar-label" data-i18n-text="{&quot;ko&quot;:&quot;CSCAM 기계사업부&quot;,&quot;en&quot;:&quot;CSCAM Machine Division&quot;}">CSCAM 기계사업부</span>
       <nav class="family-bar-nav">
-        <a href="https://cnc.cscam.co.kr/">CNC Controller</a>
-        <a href="https://lms.cscam.co.kr/">LMS Solution</a>
-        <a href="#biz-intro" class="active">3D PRINTER</a>
-        <a href="https://laser.cscam.co.kr/">LASER PATTERNING</a>
-        <a href="https://marking.cscam.co.kr/">MARKING MACHINE</a>
+        <a href="#">CNC CONTROLLER</a>
+        <a href="#">LMS SOLUTION</a>
+        <a href="#heroSection" class="active">3D PRINTER</a>
+        <a href="#">LASER PATTERNING</a>
+        <a href="#">MARKING MACHINE</a>
+        <a href="#">SOFTWARE</a>
       </nav>
     </div>
   </div>
   <div id="mobile-menu-drawer" style="position:fixed;top:101px;left:0;right:0;bottom:0;background:#fff;z-index:99;transform:translateX(100%);transition:all 0.3s ease;display:flex;flex-direction:column;padding:30px;gap:24px;border-top:1px solid #e2e6ec;">
     <!-- Family Site Switcher for Mobile Drawer -->
     <div style="display:flex;flex-wrap:wrap;gap:6px;padding-bottom:20px;margin-bottom:10px;border-bottom:1px solid #e2e6ec;font-size:10.5px;font-weight:700;font-family:'Space Grotesk',sans-serif;">
-      <a href="https://cnc.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">CNC Controller</a>
-      <a href="https://lms.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LMS Solution</a>
-      <a href="#biz-intro" onclick="toggleMobileMenu()" style="padding:5px 12px;border-radius:12px;color:#fff;background:#1e5aa8;">3D PRINTER</a>
-      <a href="https://laser.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LASER PATTERNING</a>
-      <a href="https://marking.cscam.co.kr/" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">MARKING MACHINE</a>
+      <a href="#" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">CNC CONTROLLER</a>
+      <a href="#" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LMS SOLUTION</a>
+      <a href="#heroSection" onclick="toggleMobileMenu()" style="padding:5px 12px;border-radius:12px;color:#fff;background:#1e5aa8;">3D PRINTER</a>
+      <a href="#" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">LASER PATTERNING</a>
+      <a href="#" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">MARKING MACHINE</a>
+      <a href="#" style="padding:5px 12px;border-radius:12px;color:#64748b;background:#f1f5f9;border:1px solid #cbd5e1;">SOFTWARE</a>
     </div>
     <a href="#biz-intro" onclick="toggleMobileMenu()" data-i18n-text='{"ko":"사업 소개","en":"Business Overview"}' style="font-size:18px;font-weight:700;color:#212121;">사업 소개</a>
     <a href="#slm" onclick="toggleMobileMenu()" data-i18n-text='{"ko":"SLM 3DP","en":"SLM 3DP"}' style="font-size:18px;font-weight:700;color:#212121;">SLM 3DP</a>
@@ -352,10 +354,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
           <span data-i18n-text='{"ko":"두 가지 방식의 3D 프린팅","en":"Two 3D Printing Technologies"}'>두 가지 방식의 3D 프린팅</span>
         </div>
         <div style="font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:600;font-size:clamp(18px,4.5vw,26px);color:#2196f3;margin-bottom:8px;">AnyX-M Series · SLM + SLA</div>
-        <h1 data-i18n-text='{"ko":"레이저 제어기술과\n소프트웨어로\n완성하는 ##3D 프린터##","en":"##3D Printers## Powered by\nLaser Control\nTechnology & Software"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,5vw,54px);line-height:1.16;letter-spacing:-.02em;margin-bottom:22px;color:#fff;">레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style="color:#7fd3ff;">3D 프린터</span></h1>
-        <p data-i18n-text='{"ko":"SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n씨에스캠㈜이 직접 개발한 레이저 제어 기술과 전용 소프트웨어로 구동합니다.","en":"SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by CSCAM&#39;s proprietary laser control technology and dedicated software."}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.7;">
+        <h1 data-i18n-text='{"ko":"레이저 제어기술과\n소프트웨어로\n완성하는 3D 프린터","en":"3D Printers Powered by\nLaser Control\nTechnology & Software"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,5vw,54px);line-height:1.16;letter-spacing:-.02em;margin-bottom:22px;color:#fff;">레이저 제어기술과<br>소프트웨어로<br><span style="color:#7fd3ff;">완성하는 3D 프린터</span></h1>
+        <p data-i18n-text='{"ko":"SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n레이저 제어 기술과 전용 소프트웨어로 구동합니다.","en":"SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by laser control technology and dedicated software."}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.7;">
           <strong style="color:#7fd3ff;">SLM 금속 적층(AnyX-M Series)</strong>과 <strong style="color:#7fd3ff;">SLA 광경화(AnyX-S Series)</strong> —<br>
-          씨에스캠㈜이 직접 개발한 레이저 제어 기술과 전용 소프트웨어로 구동합니다.
+          레이저 제어 기술과 전용 소프트웨어로 구동합니다.
         </p>
 
         <div style="display:flex;flex-direction:column;gap:12px;max-width:460px;">
@@ -387,7 +389,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
         <div style="display:flex;align-items:center;">
           <sc-for list="{{ heroPartners }}" as="c" hint-placeholder-count="13">
             <div style="flex-shrink:0;width:148px;height:58px;margin:0 8px;background:#fff;border:1px solid #e2e6ec;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:7px 14px;">
-              <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:40px;object-fit:contain;"></sc-if>
+              <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:40px;object-fit:contain;"></sc-if>
               <sc-if value="{{ c.textOnly }}" hint-placeholder-val="{{ false }}"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:#212121;text-align:center;line-height:1.3;">{{ c.name }}<small style="display:block;font-size:8px;color:#757575;font-weight:500;margin-top:2px;">{{ c.sub }}</small></div></sc-if>
             </div>
           </sc-for>
@@ -396,7 +398,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
         <div style="display:flex;align-items:center;">
           <sc-for list="{{ heroPartners }}" as="c" hint-placeholder-count="13">
             <div style="flex-shrink:0;width:148px;height:58px;margin:0 8px;background:#fff;border:1px solid #e2e6ec;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:7px 14px;">
-              <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:40px;object-fit:contain;"></sc-if>
+              <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:40px;object-fit:contain;"></sc-if>
               <sc-if value="{{ c.textOnly }}" hint-placeholder-val="{{ false }}"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;color:#212121;text-align:center;line-height:1.3;">{{ c.name }}<small style="display:block;font-size:8px;color:#757575;font-weight:500;margin-top:2px;">{{ c.sub }}</small></div></sc-if>
             </div>
           </sc-for>
@@ -413,7 +415,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <div data-i18n-text='{"ko":"01 / 사업 소개","en":"01 / Business Overview"}' style="white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1e5aa8;"><span style="flex-shrink:0;width:24px;height:1px;background:#1e5aa8;"></span>01 / 사업 소개</div>
       <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:#212121;padding:6px 14px;border-radius:3px;margin:14px 0 4px;">3D PRINTING</div>
       <h2 data-i18n-text='{"ko":"정밀 레이저 제어기술로\n3D 프린터를 완성합니다","en":"Completing 3D Printers with\nPrecision Laser Control Technology"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:12px 0 16px;">정밀 레이저 제어기술로<br>3D 프린터를 완성합니다</h2>
-      <p data-i18n-text='{"ko":"씨에스캠㈜은 레이저 제어 기술부터 소프트웨어까지 국내 자체개발 기술력을 바탕으로, 세계적인 회사와 경쟁할 수 있는 우수한 3D 프린터를 개발합니다. 3D 프린팅 사업 아래 두 가지 방식의 라인업을 운영하며, 아래에서 각각을 처음부터 끝까지 소개합니다.","en":"CSCAM Co., Ltd. develops world-class 3D printers based on Korea&#39;s own in-house laser control and software technology. Under the 3D Printing business, we operate two technology lineups — each introduced in full below."}' style="color:#757575;font-size:15px;max-width:680px;">씨에스캠㈜은 레이저 제어 기술부터 소프트웨어까지 국내 자체개발 기술력을 바탕으로, 세계적인 회사와 경쟁할 수 있는 우수한 3D 프린터를 개발합니다. <b style="color:#212121;">3D 프린팅</b> 사업 아래 두 가지 방식의 라인업을 운영하며, 아래에서 각각을 처음부터 끝까지 소개합니다.</p>
+      <p data-i18n-text='{"ko":"씨에스캠㈜은 레이저 제어 기술부터 소프트웨어까지 축적한 기술력을 바탕으로, 세계적인 회사와 경쟁할 수 있는 우수한 3D 프린터를 개발합니다. 3D 프린팅 사업 아래 두 가지 방식의 라인업을 운영하며, 아래에서 각각을 처음부터 끝까지 소개합니다.","en":"CSCAM Co., Ltd. develops world-class 3D printers based on accumulated laser-control and software expertise. Under the 3D Printing business, we operate two technology lineups, each introduced in full below."}' style="color:#757575;font-size:15px;max-width:680px;">씨에스캠㈜은 레이저 제어 기술부터 소프트웨어까지 축적한 기술력을 바탕으로, 세계적인 회사와 경쟁할 수 있는 우수한 3D 프린터를 개발합니다. <b style="color:#212121;">3D 프린팅</b> 사업 아래 두 가지 방식의 라인업을 운영하며, 아래에서 각각을 처음부터 끝까지 소개합니다.</p>
     </div>
 
     <div class="intro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
@@ -427,7 +429,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
             </div>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-style:italic;font-size:26px;letter-spacing:-.01em;margin-bottom:4px;">SLM</h3>
             <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#757575;margin-bottom:16px;">Selective Laser Melting · AnyX-M Series</div>
-            <p style="font-size:13px;color:#424242;line-height:1.75;margin-bottom:18px;text-align:justify;" data-i18n-text="{&quot;ko&quot;:&quot;금속 분말을 고정밀 파이버 레이저로 녹여 층층이 쌓아 올려, 전통적인 절삭 가공으로는 구현하기 어려운 복잡한 내부 중공 구조나 냉각 유로를 지닌 부품을 처음부터 일체형으로 구현하는 금속 3D 프린팅(PBF) 라인업입니다. 씨에스캠만의 독자적인 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.&quot;,&quot;en&quot;:&quot;This metal 3D printing (PBF) lineup melts metal powder with a high-precision fiber laser and builds it layer by layer to produce integrated parts with complex internal cavities or cooling channels that are difficult to machine conventionally. CSCAM combines proprietary laser control technology with real-time monitoring to secure high relative density and reliable tensile strength, from compact dental and medical precision parts to large industrial, power-generation, and nuclear components. Four optimized models are available: AnyX-M180, M250, M400, and M1000.&quot;}">금속 분말을 고정밀 파이버 레이저로 녹여 층층이 쌓아 올려, 전통적인 절삭 가공으로는 구현하기 어려운 복잡한 내부 중공 구조나 냉각 유로를 지닌 부품을 처음부터 일체형으로 구현하는 <b>금속 3D 프린팅(PBF)</b> 라인업입니다. 씨에스캠만의 독자적인 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.</p>
+            <p style="font-size:13px;color:#424242;line-height:1.75;margin-bottom:18px;text-align:justify;" data-i18n-text="{&quot;ko&quot;:&quot;금속 분말을 고정밀 파이버 레이저로 녹여 층층이 쌓아 올려, 전통적인 절삭 가공으로는 구현하기 어려운 복잡한 내부 중공 구조나 냉각 유로를 지닌 부품을 처음부터 일체형으로 구현하는 금속 3D 프린팅(PBF) 라인업입니다. 씨에스캠의 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.&quot;,&quot;en&quot;:&quot;This metal 3D printing (PBF) lineup melts metal powder with a high-precision fiber laser and builds it layer by layer to produce integrated parts with complex internal cavities or cooling channels that are difficult to machine conventionally. CSCAM combines laser-control technology with real-time monitoring to secure high relative density and reliable tensile strength, from compact dental and medical precision parts to large industrial, power-generation, and nuclear components. Four optimized models are available: AnyX-M180, M250, M400, and M1000.&quot;}">금속 분말을 고정밀 파이버 레이저로 녹여 층층이 쌓아 올려, 전통적인 절삭 가공으로는 구현하기 어려운 복잡한 내부 중공 구조나 냉각 유로를 지닌 부품을 처음부터 일체형으로 구현하는 <b>금속 3D 프린팅(PBF)</b> 라인업입니다. 씨에스캠의 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.</p>
           </div>
           <span style="font-size:13px;font-weight:700;color:#1e5aa8;" data-i18n-text="{&quot;ko&quot;:&quot;SLM(AnyX) 자세히 보기 →&quot;,&quot;en&quot;:&quot;Learn more about SLM (AnyX) →&quot;}">SLM(AnyX) 자세히 보기 →</span>
         </a>
@@ -521,7 +523,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
           <!-- Clickable Product Image -->
           <div onClick="{{ openSpecModal }}" data-product="{{ p.name }}" style="aspect-ratio:4/3.4;background:linear-gradient(135deg,#fafbfc 0%,#f2f5f9 100%);position:relative;display:grid;place-items:center;overflow:hidden;cursor:pointer;">
             <span style="position:absolute;top:12px;left:12px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;border-radius:3px;background:#1e5aa8;color:#fff;">{{ p.cat }}</span>
-            <img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;padding:8px;box-sizing:border-box;">
+            <img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;padding:8px;box-sizing:border-box;">
           </div>
           <div style="padding:22px 20px 24px;">
             <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-style:italic;font-size:24px;color:#1e5aa8;letter-spacing:-.01em;margin-bottom:4px;">{{ p.name }}</div>
@@ -563,7 +565,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
             <!-- Left: Image & Category -->
             <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fafbfc;border:1px solid #e2e6ec;border-radius:8px;padding:20px;box-sizing:border-box;">
               <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;background:#eaf3fc;color:#1e5aa8;border-radius:3px;font-weight:700;margin-bottom:20px;">{{ activeSpecProduct.cat }}</span>
-              <img src="{{ activeSpecProduct.img }}" alt="{{ activeSpecProduct.name }}" style="max-width:100%;max-height:220px;object-fit:contain;mix-blend-mode:multiply;">
+              <img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ activeSpecProduct.img }}" alt="{{ activeSpecProduct.name }}" style="max-width:100%;max-height:220px;object-fit:contain;mix-blend-mode:multiply;">
               <div style="font-size:13px;color:#424242;text-align:center;font-weight:500;margin-top:20px;line-height:1.45;">{{ activeSpecProduct.tag }}</div>
             </div>
             <!-- Right: Specs Table -->
@@ -751,7 +753,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div style="display:flex;flex-direction:column;gap:24px;">
       <sc-for list="{{ slmApps }}" as="a" hint-placeholder-count="5">
         <div class="app-card" style="display:flex;gap:44px;align-items:center;background:#fafbfc;border:1px solid #e2e6ec;border-radius:8px;overflow:hidden;flex-direction:{{ a.flexDir }};">
-          <div class="app-card-img" style="width:400px;height:260px;flex-shrink:0;overflow:hidden;"><img src="{{ a.img }}" alt="{{ a.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="app-card-img" style="width:400px;height:260px;flex-shrink:0;overflow:hidden;"><img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ a.img }}" alt="{{ a.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="app-card-text" style="padding:{{ a.textPadding }};flex:1;">
             <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#1e5aa8;font-weight:600;margin-bottom:8px;">{{ a.tagline }}</div>
             <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-style:italic;font-size:22px;color:#212121;margin-bottom:10px;">{{ a.title }}</h4>
@@ -773,7 +775,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div class="installations-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
       <sc-for list="{{ slmInstalls }}" as="i" hint-placeholder-count="6">
         <div style="background:#fff;border:1px solid #e2e6ec;border-radius:8px;overflow:hidden;" style-hover="border-color:#1e5aa8;box-shadow:0 6px 20px rgba(13,71,161,.10);transform:translateY(-2px);">
-          <div style="aspect-ratio:16/10;overflow:hidden;"><img src="{{ i.img }}" alt="{{ i.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div style="aspect-ratio:16/10;overflow:hidden;"><img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ i.img }}" alt="{{ i.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
           <div style="padding:18px 20px 20px;">
             <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#2196f3;font-weight:600;margin-bottom:8px;">{{ i.model }}</div>
             <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#212121;line-height:1.3;letter-spacing:-.01em;margin-bottom:8px;">{{ i.title }}</h4>
@@ -792,7 +794,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <div>
         <div style="white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1e5aa8;" data-i18n-text="{&quot;ko&quot;:&quot;02-6 / SLM — 브랜드 스토리&quot;,&quot;en&quot;:&quot;02-6 / SLM — Brand Story&quot;}"><span style="flex-shrink:0;width:24px;height:1px;background:#1e5aa8;"></span>02-6 / SLM — 브랜드 스토리</div>
         <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.02em;margin:12px 0 20px;" data-i18n-text="{&quot;ko&quot;:&quot;AnyX-M Series에 담겨 있습니다&quot;,&quot;en&quot;:&quot;are built into the AnyX-M Series&quot;}">10년 이상의 레이저 제어 기술이<br>AnyX-M Series에 담겨 있습니다</h2>
-        <p style="color:#424242;font-size:14.5px;line-height:1.8;" data-i18n-text="{&quot;ko&quot;:&quot;씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계·제어 소프트웨어를 자체 설계했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.&quot;,&quot;en&quot;:&quot;Based on experience developing laser-processing equipment, CSCAM designs the optics and control software for SLM metal 3D printers in-house. The AnyX-M Series is proven in real operating environments, from universities such as Kyung Hee University and Chosun University to industrial and research sites including LG Electronics and KAERI.&quot;}">씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계·제어 소프트웨어를 자체 설계했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.</p>
+        <p style="color:#424242;font-size:14.5px;line-height:1.8;" data-i18n-text="{&quot;ko&quot;:&quot;씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계와 제어 소프트웨어를 정밀하게 구성했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.&quot;,&quot;en&quot;:&quot;Based on experience developing laser-processing equipment, CSCAM configures the optics and control software for SLM metal 3D printers with high precision. The AnyX-M Series is proven in real operating environments, from universities such as Kyung Hee University and Chosun University to industrial and research sites including LG Electronics and KAERI.&quot;}">씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계와 제어 소프트웨어를 정밀하게 구성했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.</p>
       </div>
       <div class="catalog-cards-grid" style="background:#eaf3fc;border-radius:10px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
         <sc-for list="{{ slmStats }}" as="st" hint-placeholder-count="4">
@@ -854,8 +856,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
   <div style="max-width:1320px;margin:0 auto;padding:0 32px;" data-reveal="1">
     <div style="margin-bottom:56px;">
       <div style="white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#1e5aa8;"><span style="flex-shrink:0;width:24px;height:1px;background:#1e5aa8;"></span>04 / Software</div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:12px 0 16px;" data-i18n-text="{&quot;ko&quot;:&quot;컨트롤 소프트웨어&quot;,&quot;en&quot;:&quot;control software&quot;}">CAM &amp; 컨트롤 소프트웨어</h2>
-      <p style="color:#757575;font-size:15px;max-width:680px;" data-i18n-text="{&quot;ko&quot;:&quot;SLM(AnyX)과 SLA(AnyX-S) 전 라인업이 하나의 씨에스캠 자체개발 소프트웨어로 구동됩니다.&quot;,&quot;en&quot;:&quot;The full SLM (AnyX) and SLA (AnyX-S) lineups are driven by one CSCAM in-house software platform.&quot;}">SLM(AnyX)과 SLA(AnyX-S) 전 라인업이 하나의 <b style="color:#212121;">씨에스캠 자체개발 소프트웨어</b>로 구동됩니다.</p>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:12px 0 16px;" data-i18n-text="{&quot;ko&quot;:&quot;CAM &amp; 컨트롤 소프트웨어&quot;,&quot;en&quot;:&quot;CAM &amp; Control Software&quot;}">CAM &amp; 컨트롤 소프트웨어</h2>
+      <p style="color:#757575;font-size:15px;max-width:680px;" data-i18n-text="{&quot;ko&quot;:&quot;SLM(AnyX)과 SLA(AnyX-S) 전 라인업은 씨에스캠 전용 소프트웨어 환경에서 구동됩니다.&quot;,&quot;en&quot;:&quot;The full SLM (AnyX) and SLA (AnyX-S) lineups operate within CSCAM&#39;s dedicated software environment.&quot;}">SLM(AnyX)과 SLA(AnyX-S) 전 라인업은 <b style="color:#212121;">씨에스캠 전용 소프트웨어 환경</b>에서 구동됩니다.</p>
     </div>
     <div class="software-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
       <div style="background:#fff;border:1px solid #e2e6ec;border-top:3px solid #1e5aa8;border-radius:12px;padding:32px;">
@@ -914,7 +916,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <sc-for list="{{ customersFull }}" as="c" hint-placeholder-count="14">
         <div style="background:#fff;border:1px solid #e2e6ec;border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:14px;" style-hover="border-color:#1e5aa8;box-shadow:0 6px 20px rgba(13,71,161,.10);">
           <div style="height:72px;display:flex;align-items:center;justify-content:center;">
-            <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:66px;object-fit:contain;"></sc-if>
+            <sc-if value="{{ c.img }}" hint-placeholder-val="{{ true }}"><img class="dc-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="{{ c.img }}" alt="{{ c.name }}" style="max-width:100%;max-height:66px;object-fit:contain;"></sc-if>
             <sc-if value="{{ c.textOnly }}" hint-placeholder-val="{{ false }}"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#212121;text-align:center;line-height:1.3;">{{ c.name }}<small style="display:block;font-size:10px;color:#757575;font-weight:500;margin-top:3px;">{{ c.sub }}</small></div></sc-if>
           </div>
           <div style="border-top:1px solid #f2f5f9;padding-top:12px;text-align:center;">
@@ -974,7 +976,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <div style="color:#c4d1e6;">
         <div style="font-weight:700;font-size:16px;color:#fff;letter-spacing:.01em;margin-bottom:4px;" data-i18n-text="{&quot;ko&quot;:&quot;씨에스캠주식회사&quot;,&quot;en&quot;:&quot;CSCAM Co., Ltd.&quot;}">씨에스캠주식회사</div>
         <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-style:italic;font-size:15px;color:#2196f3;margin-bottom:16px;">3D PRINTER</div>
-        <p style="font-size:13px;line-height:1.7;max-width:380px;" data-i18n-text="{&quot;ko&quot;:&quot;레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 자체 개발·공급합니다.&quot;,&quot;en&quot;:&quot;We develop and supply SLM metal 3D printers (AnyX-M Series) and SLA photopolymerization 3D printers (AnyX-S Series) based on laser control technology.&quot;}">레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 자체 개발·공급합니다.</p>
+        <p style="font-size:13px;line-height:1.7;max-width:380px;" data-i18n-text="{&quot;ko&quot;:&quot;레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 공급합니다.&quot;,&quot;en&quot;:&quot;We supply SLM metal 3D printers (AnyX-M Series) and SLA photopolymerization 3D printers (AnyX-S Series) based on laser control technology.&quot;}">레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 공급합니다.</p>
       </div>
       <div>
         <h6 style="color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;margin-bottom:16px;">SLM 3DP</h6>
@@ -1026,9 +1028,22 @@ class Component extends DCLogic {
 
   setRoot = (el) => { this.root = el; };
 
+  hydrateDcImages = () => {
+    const root = this.root || document;
+    root.querySelectorAll('img.dc-img[data-src]').forEach((img) => {
+      const src = img.getAttribute('data-src');
+      if (src && !src.includes('{{') && img.getAttribute('src') !== src) {
+        img.setAttribute('src', src);
+      }
+    });
+  };
+
   toggleWorkshopVideo = () => { this.setState((s) => ({ workshopVideoPlaying: !s.workshopVideoPlaying })); };
 
   componentDidMount() {
+    this.hydrateDcImages();
+    setTimeout(this.hydrateDcImages, 0);
+    setTimeout(this.hydrateDcImages, 300);
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -1241,7 +1256,7 @@ class Component extends DCLogic {
       { num: '01', title: t('데이터 선택', 'Data Selection'), desc: t('STP 혹은 STL 파일 선택을 통해 대상 부품 식별', 'Identify target part by selecting STP or STL file') },
       { num: '02', title: t('부품 배치', 'Part Layout'), desc: t('CS_Laser 3D를 통한 최적 부품 배치 및 조형 슬라이싱 작업', 'Optimal part placement and build slicing via CS_Laser 3D') },
       { num: '03', title: t('분말 확인', 'Powder Check'), desc: t('빌드 챔버 내 금속 분말의 상태 및 수분 확인', 'Verify metal powder condition and moisture in build chamber') },
-      { num: '04', title: t('원클릭 공정개시', 'One-Click Start'), desc: t('자체개발 전용 프로그램(CS_Laser 3D)으로 원클릭 공정 개시', 'One-click process initiation via proprietary CS_Laser 3D software') },
+      { num: '04', title: t('원클릭 공정개시', 'One-Click Start'), desc: t('전용 프로그램(CS_Laser 3D)으로 원클릭 공정 개시', 'One-click process initiation via dedicated CS_Laser 3D software') },
       { num: '05', title: t('실시간 관제', 'Real-time Monitoring'), desc: t('산소 농도(≤0.1%), 온·습도 및 레이어별 품질 모니터링', 'O₂ concentration (≤0.1%), temperature/humidity, and per-layer quality monitoring') },
       { num: '06', title: t('후처리 작업', 'Post-processing'), desc: t('조형 완료 후 분말 제거, 서포트 제거 및 샌드블라스트', 'Powder removal, support removal, and sandblasting after build completion') },
       { num: '07', title: t('로그 저장', 'Log Storage'), desc: t('출력 조건 및 장비 운용 이력 DB 동기화로 품질 보증', 'Quality assurance via DB sync of print conditions and machine operation history') },
@@ -1330,7 +1345,7 @@ class Component extends DCLogic {
   .top-btn-3dp {
     position: fixed;
     right: 36px;
-    bottom: 104px;
+    bottom: 28px;
     z-index: 190;
     width: 44px;
     height: 44px;
@@ -1347,6 +1362,9 @@ class Component extends DCLogic {
   .top-btn-3dp:hover {
     background: #eaf3fc;
     transform: translateY(-3px);
+  }
+  #ai-chatbot-widget {
+    display: none !important;
   }
 </style>
 <button type="button" class="top-btn-3dp" onclick="scrollToTop()" aria-label="Back to top">
@@ -1624,17 +1642,12 @@ class Component extends DCLogic {
   // Load welcome bubble
   appendInitialWelcome();
 })();
-</script>
-<script>
+
 // Family site links: sibling folders on the same host/deployment.
 // Isolated in its own script block so an error earlier on the page
-// (e.g. in the chatbot widget above) can never prevent this from running.
-// Does NOT rely solely on the DOMContentLoaded event: on this page that
-// event can already have fired by the time this script tag (placed at
-// the end of body) runs, which would silently drop a listener-only
-// version of this fix. Runs immediately if the DOM is already ready,
-// falls back to the event otherwise, and re-applies once more on
-// window 'load' as a safety net against any later re-render.
+// can never prevent this from running. Runs immediately if the DOM is
+// already ready, falls back to the event otherwise, and re-applies once
+// more on window 'load' as a safety net against any later re-render.
 function cscamApplyFamilyLinks() {
   const isLocal = location.protocol === "file:";
   const isGhPages = location.hostname === "cih2000.github.io";
@@ -1647,11 +1660,13 @@ function cscamApplyFamilyLinks() {
     } else if (text.includes("LMS")) {
       link.href = isLocal ? "../cscam-lms/index.html" : isGhPages ? GH + "/cscam-lms/index.html" : "https://lms.cscam.co.kr/";
     } else if (text.includes("3D PRINTER")) {
-      link.href = "#biz-intro";
+      link.href = "#heroSection";
     } else if (text.includes("LASER") || text.includes("TEXTURING") || text.includes("ENGRAVING")) {
       link.href = isLocal ? "../cscam-engraving/index.html" : isGhPages ? GH + "/cscam-engraving/index.html" : "https://laser.cscam.co.kr/";
     } else if (text.includes("MARKING")) {
       link.href = isLocal ? "../cscam-marking/index.html" : isGhPages ? GH + "/cscam-marking/index.html" : "https://marking.cscam.co.kr/";
+    } else if (text.includes("SOFTWARE")) {
+      link.href = isLocal ? "../cscam-sw/index.html" : isGhPages ? GH + "/cscam-sw/index.html" : "https://sw.cscam.co.kr/";
     }
   });
   const logoLinks = document.querySelectorAll(".brand-logo-link");

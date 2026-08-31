@@ -7,7 +7,7 @@
     'CSCAM 기계사업부': 'CSCAM Machine Division',
     '금속 분말을 고정밀 파이버 레이저로 녹여 층층이 쌓아 올려, 전통적인 절삭 가공으로는 구현하기 어려운 복잡한 내부 중공 구조나 냉각 유로를 지닌 부품을 처음부터 일체형으로 구현하는': 'Metal powder is melted with a high-precision fiber laser and built layer by layer to produce integrated parts with complex internal cavities or cooling channels that are difficult to machine conventionally.',
     '금속 3D 프린팅(PBF)': 'metal 3D printing (PBF)',
-    '라인업입니다. 씨에스캠만의 독자적인 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.': 'lineup. CSCAM combines proprietary laser control technology with real-time monitoring to secure high relative density and reliable tensile strength, from compact dental and medical precision parts to large industrial, power-generation, and nuclear components. Four optimized models are available: AnyX-M180, M250, M400, and M1000.',
+    '라인업입니다. 씨에스캠의 레이저 제어 기술과 실시간 모니터링 시스템을 통해 소형 덴탈 의료 정밀 부품부터 대형 산업 발전 및 원자력 발전용 부품까지 최고 등급의 상대밀도와 신뢰성 있는 인장강도를 확보하며, 장비 크기별 최적화된 4종(AnyX-M180, M250, M400, M1000)의 고성능 금속 적층 제조 라인업을 제공하고 있습니다.': 'lineup. CSCAM combines laser-control technology with real-time monitoring to secure high relative density and reliable tensile strength, from compact dental and medical precision parts to large industrial, power-generation, and nuclear components. Four optimized models are available: AnyX-M180, M250, M400, and M1000.',
     'SLM(AnyX) 자세히 보기 →': 'Learn more about SLM (AnyX) →',
     '액체 상태의 광경화성 에폭시/아크릴 수지에 고정밀 UV 자외선 레이저를 조사하여 순간적으로 경화시켜 형상을 제조하는': 'A lineup that forms parts by applying a high-precision UV laser to liquid photosensitive epoxy/acrylic resin, curing it instantly.',
     '광경화 적층 방식(Stereolithography, SLA)': 'stereolithography (SLA)',
@@ -70,16 +70,13 @@
     '02-6 / SLM — 브랜드 스토리': '02-6 / SLM — Brand Story',
     '10년 이상의 레이저 제어 기술이': 'More than 10 years of laser-control technology',
     'AnyX-M Series에 담겨 있습니다': 'are built into the AnyX-M Series',
-    '씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계·제어 소프트웨어를 자체 설계했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.': 'Based on experience developing laser-processing equipment, CSCAM designs the optics and control software for SLM metal 3D printers in-house. The AnyX-M Series is proven in real operating environments, from universities such as Kyung Hee University and Chosun University to industrial and research sites including LG Electronics and KAERI.',
+    '씨에스캠은 레이저 가공 장비 개발 경험을 바탕으로 SLM 방식 금속 3D 프린터의 광학계와 제어 소프트웨어를 정밀하게 구성했습니다. 경희대학교·조선대학교 등 교육기관부터 LG전자·한국원자력연구원 등 산업·연구 현장까지, AnyX-M Series는 실제 가동 현장에서 검증되고 있습니다.': 'Based on experience developing laser-processing equipment, CSCAM configures the optics and control software for SLM metal 3D printers with high precision. The AnyX-M Series is proven in real operating environments, from universities such as Kyung Hee University and Chosun University to industrial and research sites including LG Electronics and KAERI.',
     '02-7 / SLM — 자료 다운로드': '02-7 / SLM — Downloads',
     '03 / SLA — 라인업 소개': '03 / SLA — Lineup Overview',
     'SLA 광경화 3D 프린터': 'SLA Photopolymerization 3D Printers',
     '[ AnyX-S Series ] 데이터 준비 및 업데이트 대기 중': '[ AnyX-S Series ] Data preparation and update pending',
-    '국내 자체개발': 'In-house developed',
-    '컨트롤 소프트웨어': 'control software',
-    'SLM(AnyX)과 SLA(AnyX-S) 전 라인업이 하나의': 'The full SLM (AnyX) and SLA (AnyX-S) lineups are driven by one',
-    '씨에스캠 자체개발 소프트웨어': 'CSCAM in-house software platform',
-    '로 구동됩니다.': '.',
+    'CAM & 컨트롤 소프트웨어': 'CAM & Control Software',
+    'SLM(AnyX)과 SLA(AnyX-S) 전 라인업은 씨에스캠 전용 소프트웨어 환경에서 구동됩니다.': 'The full SLM (AnyX) and SLA (AnyX-S) lineups operate within CSCAM dedicated software environment.',
     '"AnyX 전 라인업 전용 CAM 시스템"': '"Dedicated CAM system for the full AnyX lineup"',
     'AnyX-M Series(SLM)와 AnyX-S Series(SLA)의 조형 데이터 생성, 슬라이싱, 마킹을 하나로 처리하는 씨에스캠 전용 CAM 소프트웨어입니다.': 'CSCAM dedicated CAM software handles build-data generation, slicing, and marking for both AnyX-M Series (SLM) and AnyX-S Series (SLA).',
     'CS_Laser 3D 매뉴얼 · PDF': 'CS_Laser 3D Manual · PDF',
@@ -98,7 +95,7 @@
     '본사 (전남광주특별시)': 'Headquarters (Gwangju, Korea)',
     '전남광주특별시 광산구 평동산단로 239-15': '239-15, Pyeongdongsandan-ro, Gwangsan-gu, Gwangju, Korea',
     '씨에스캠주식회사': 'CSCAM Co., Ltd.',
-    '레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 자체 개발·공급합니다.': 'We develop and supply SLM metal 3D printers (AnyX-M Series) and SLA photopolymerization 3D printers (AnyX-S Series) based on laser control technology.',
+    '레이저 제어 기술 기반의 SLM 금속 3D 프린터(AnyX-M Series)와 SLA 광경화 3D 프린터(AnyX-S Series)를 공급합니다.': 'We supply SLM metal 3D printers (AnyX-M Series) and SLA photopolymerization 3D printers (AnyX-S Series) based on laser control technology.',
     '기술자료': 'Technical Resources',
     'SLM 응용분야 · 소재': 'SLM Applications · Materials',
     'SLA 응용분야 · 레진': 'SLA Applications · Resins',
@@ -194,17 +191,14 @@
         if (leadingDecor) el.appendChild(leadingDecor);
         String(value).split('\n').forEach(function (part, index) {
           if (index > 0) el.appendChild(document.createElement('br'));
-          part.split(/##(.+?)##/).forEach(function (seg, i) {
-            if (i % 2 === 1) {
-              var mark = document.createElement('span');
-              mark.style.color = '#7fd3ff';
-              mark.textContent = seg;
-              el.appendChild(mark);
-            } else if (seg) {
-              el.appendChild(document.createTextNode(seg));
-            }
-          });
+          el.appendChild(document.createTextNode(part));
         });
+      } catch (e) {}
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      try {
+        var tr = JSON.parse(el.getAttribute('data-i18n-html'));
+        el.innerHTML = tr[window.LANG] || tr['ko'];
       } catch (e) {}
     });
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
