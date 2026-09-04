@@ -1,7 +1,7 @@
 (function () {
   var lang = new URLSearchParams(location.search).get('lang');
-  window.LANG = (lang === 'en') ? 'en' : 'ko';
-  window.t = function (ko, en) { return window.LANG === 'en' ? (en || ko) : ko; };
+  window.LANG = (lang === 'en' || lang === 'zh') ? lang : 'ko';
+  window.t = function (ko, en, zh) { return window.LANG === 'en' ? (en || ko) : window.LANG === 'zh' ? (zh || en || ko) : ko; };
 
   var textMap = {
     'CSCAM 기계사업부': 'CSCAM Machine Division',
