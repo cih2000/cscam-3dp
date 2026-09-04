@@ -331,7 +331,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
 <div style="height:100px;width:100%;"></div>
 
 <!-- HERO -->
-<section id="heroSection" style="position:relative;background:#0d1e3d;color:#fff;overflow:hidden;min-height:88vh;display:flex;align-items:center;">
+<section id="heroSection" style="position:relative;background:#0d1e3d;color:#fff;overflow:hidden;height:815px;display:flex;align-items:stretch;">
   <div style="position:absolute;inset:0;z-index:0;overflow:hidden;background:#0d1e3d;">
     <div style="position:absolute;inset:0;z-index:1;background-image:url('images/slm/hero-factory-line-v2.png');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.85;"></div>
     <video autoplay="" muted="" loop="" playsinline="" poster="images/slm/hero-factory-line-v2.png" style="position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:.55;object-position:center;">
@@ -346,16 +346,16 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div style="position:absolute;inset:0;z-index:4;background:linear-gradient(100deg,rgba(13,30,61,.92) 0%,rgba(13,30,61,.75) 45%,rgba(13,30,61,.4) 75%,rgba(13,30,61,.15) 100%);"></div>
   </div>
 
-  <div style="max-width:1320px;margin:0 auto;padding:60px clamp(18px,5vw,32px);position:relative;z-index:5;width:100%;">
+  <div style="max-width:1320px;margin:0 auto;padding:60px clamp(18px,5vw,32px);position:relative;z-index:5;width:100%;display:flex;flex-direction:column;height:100%;box-sizing:border-box;">
     <div class="hero-grid" style="display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center;">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a3d4ff;display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;">
           <span style="padding:4px 10px;border:1px solid rgba(127,196,255,.4);border-radius:3px;color:#cfe8ff;background:rgba(127,196,255,.08);">3D PRINTING TECHNOLOGY</span>
           <span data-i18n-text='{"ko":"두 가지 방식의 3D 프린팅","en":"Two 3D Printing Technologies"}'>두 가지 방식의 3D 프린팅</span>
         </div>
-        <div style="font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:600;font-size:clamp(18px,4.5vw,26px);line-height:1;color:#2196f3;margin-bottom:10px;">AnyX-M Series · SLM + SLA</div>
-        <h1 data-i18n-html='{"ko":"레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style=\"color:#7fd3ff;\">3D 프린터</span>","en":"<span style=\"color:#7fd3ff;\">3D Printers</span> Powered by<br>Laser Control<br>Technology &amp; Software"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,5vw,54px);line-height:1.2;letter-spacing:-.02em;margin-top:0;margin-bottom:22px;color:#fff;">레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style="color:#7fd3ff;">3D 프린터</span></h1>
-        <p data-i18n-text='{"ko":"SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n레이저 제어 기술과 전용 소프트웨어로 구동합니다.","en":"SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by laser control technology and dedicated software."}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.7;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:600;font-size:clamp(16px,3vw,22px);color:#2196f3;margin-bottom:10px;">AnyX-M Series · SLM + SLA</div>
+        <h1 data-i18n-html='{"ko":"레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style=\"color:#7fd3ff;\">3D 프린터</span>","en":"<span style=\"color:#7fd3ff;\">3D Printers</span> Powered by<br>Laser Control<br>Technology &amp; Software"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,4.6vw,50px);line-height:1.2;letter-spacing:-.02em;margin-top:0;margin-bottom:22px;color:#fff;">레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style="color:#7fd3ff;">3D 프린터</span></h1>
+        <p data-i18n-text='{"ko":"SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n레이저 제어 기술과 전용 소프트웨어로 구동합니다.","en":"SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by laser control technology and dedicated software."}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.75;">
           <strong style="color:#7fd3ff;">SLM 금속 적층(AnyX-M Series)</strong>과 <strong style="color:#7fd3ff;">SLA 광경화(AnyX-S Series)</strong> —<br>
           레이저 제어 기술과 전용 소프트웨어로 구동합니다.
         </p>
@@ -382,7 +382,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <div></div>
     </div>
 
-    <div style="position:relative;z-index:1;margin-top:60px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);overflow:hidden;">
+    <div style="position:relative;z-index:1;margin-top:auto;margin-bottom:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);overflow:hidden;flex-shrink:0;">
       <div data-i18n-text='{"ko":"주요 고객사","en":"KEY CUSTOMERS"}' style="font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;color:#a3d4ff;margin-bottom:18px;text-transform:uppercase;">주요 고객사</div>
       <div class="hero-marquee" style="display:flex;align-items:center;width:max-content;animation:marqueeScroll 38s linear infinite;">
         <!-- Group 1 -->
