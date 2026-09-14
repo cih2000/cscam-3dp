@@ -229,6 +229,35 @@
     .family-bar-nav a:hover{color:#fff;background:rgba(255,255,255,.08);}
     .family-bar-nav a.active{color:#fff;background:#1e5aa8;}
     .family-bar-nav span.disabled{color:#3a4556;cursor:not-allowed;}
+
+    /* Hero right-side video (LMS 히어로 우측 영상과 동일한 위치/스타일) */
+    .hero-video-3dp {
+      position: relative; z-index: 3; align-self: flex-start;
+      width: 100%; max-width: 480px; margin-top: 90px;
+      aspect-ratio: 16/9;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(127,196,255,.35);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    }
+    .hero-video-3dp video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: saturate(1.05) contrast(1.05) brightness(.92);
+    }
+    .hero-video-3dp::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(165deg, rgba(13,30,61,.34) 0%, rgba(10,23,48,.1) 45%, rgba(13,30,61,.32) 100%);
+      mix-blend-mode: multiply;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .hero-video-3dp .hero-video-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+      padding: 8px 12px;
+      font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .05em; color: #cfe8ff;
+      background: linear-gradient(0deg, rgba(13,30,61,.85), transparent);
+    }
+    @media (max-width: 992px) {
+      .hero-video-3dp { max-width: 440px; margin: 0 auto; }
+    }
   </style>
 </head>
 <body>
@@ -391,8 +420,13 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
         </div>
       </div>
 
-      <!-- Right column is left empty to expose the right-aligned background image -->
-      <div></div>
+      <!-- Right column: AnyX-150 실사 하이라이트 영상 (LMS 히어로 영상과 동일한 위치/스타일) -->
+      <div class="hero-video-3dp">
+        <video autoplay muted playsinline preload="auto" poster="images/video/hero-anyx150-poster.jpg">
+          <source src="video/hero-anyx150-clips.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-cap">AnyX-150 출력 하이라이트</div>
+      </div>
     </div>
 
     <div style="position:relative;z-index:1;margin-top:auto;margin-bottom:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);overflow:hidden;flex-shrink:0;">
@@ -1707,6 +1741,71 @@ if (document.readyState === "loading") {
   cscamApplyFamilyLinks();
 }
 window.addEventListener("load", cscamApplyFamilyLinks);
+</script>
+<script>
+// 히어로 우측 AnyX-150 영상: 자동재생이 가끔 안 걸리거나(브라우저 정책/타이밍),
+// 반복(loop) 시 처음으로 안 돌아가는 경우를 대비해 재생/반복을 JS로도 직접 보장한다.
+(function () {
+  function setupHeroVideo(video) {
+    if (!video || video.dataset.cscamLoopGuard) return;
+    video.dataset.cscamLoopGuard = "1";
+    // 속성만으로는 브라우저에 따라 자동재생이 씹히는 경우가 있어, 프로퍼티로도 동일하게 강제
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    // 네이티브 loop는 끝점 부근에서 브라우저가 정지해버리는 경우가 있어 직접 제어로 대체
+    video.loop = false;
+    var restarting = false;
+    var tryPlay = function () {
+      var p = video.play();
+      if (p && typeof p.catch === "function") p.catch(function () { /* 이 시점 실패는 무시, 다음 재시도에서 성공하면 됨 */ });
+    };
+    var restart = function () {
+      if (restarting) return;
+      restarting = true;
+      video.currentTime = 0;
+      tryPlay();
+      setTimeout(function () { restarting = false; }, 300);
+    };
+    // 초기 시도 + 데이터 준비 시점마다 재시도(첫 시도가 너무 일러 실패하는 경우 보완)
+    tryPlay();
+    video.load();
+    tryPlay();
+    ["loadstart", "loadeddata", "canplay", "canplaythrough", "playing"].forEach(function (ev) {
+      video.addEventListener(ev, tryPlay);
+    });
+    // 하드 리프레시 등으로 이벤트가 예상대로 안 걸리는 경우까지 대비한 시간차 재시도
+    [300, 1000, 2500, 5000].forEach(function (delay) {
+      setTimeout(function () { if (video.paused) tryPlay(); }, delay);
+    });
+    // 반복 재생: ended 이벤트가 주된 트리거
+    video.addEventListener("ended", restart);
+    // ended가 간헐적으로 안 걸리는 파일/브라우저 조합을 대비해, 끝부분에 도달하면 timeupdate로도 강제 재시작
+    video.addEventListener("timeupdate", function () {
+      if (video.duration && video.currentTime >= video.duration - 0.12) restart();
+    });
+    // 혹시 재생이 멈춘 채(끝 프레임 등) 몇 초 이상 멈춰 있으면 정기적으로 감시해서 되살림
+    setInterval(function () {
+      if (video.paused && !document.hidden) {
+        if (video.duration && video.currentTime >= video.duration - 0.2) restart();
+        else tryPlay();
+      }
+    }, 1500);
+    // 탭이 백그라운드였다가 다시 보일 때 멈춰 있으면 재생 재시도
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && video.paused) tryPlay();
+    });
+  }
+  function init() {
+    document.querySelectorAll(".hero-video-3dp video").forEach(setupHeroVideo);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+  window.addEventListener("load", init);
+})();
 </script>
 <script>
 document.querySelectorAll('.lang-btn').forEach(function (btn) {
