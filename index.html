@@ -229,12 +229,25 @@
     .family-bar-nav a:hover{color:#fff;background:rgba(255,255,255,.08);}
     .family-bar-nav a.active{color:#fff;background:#1e5aa8;}
     .family-bar-nav span.disabled{color:#3a4556;cursor:not-allowed;}
+    .workflow-steps-grid > div:not(:last-child) { position: relative; }
+    .workflow-steps-grid > div:not(:last-child)::after {
+      content: '▶';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 9px;
+      color: #1e5aa8;
+      opacity: 0.7;
+      z-index: 10;
+      pointer-events: none;
+    }
 
-    /* Hero right-side video (LMS 히어로 우측 영상과 동일한 위치/스타일) */
+    /* Hero right-side video (크고 정사각형에 가까운 비율로 표시) */
     .hero-video-3dp {
       position: relative; z-index: 3; align-self: flex-start;
-      width: 100%; max-width: 480px; margin-top: 90px; margin-left: -175px;
-      aspect-ratio: 16/9;
+      width: 560px; max-width: 46vw; margin-top: 90px; margin-left: -192px;
+      aspect-ratio: 4/3;
       border-radius: 12px; overflow: hidden;
       border: 1px solid rgba(127,196,255,.35);
       box-shadow: 0 24px 60px rgba(0,0,0,.5);
@@ -256,7 +269,7 @@
       background: linear-gradient(0deg, rgba(13,30,61,.85), transparent);
     }
     @media (max-width: 992px) {
-      .hero-video-3dp { max-width: 440px; margin: 0 auto; }
+      .hero-video-3dp { width: 100%; max-width: 440px; margin: 24px auto 0; }
     }
   </style>
 </head>
@@ -370,10 +383,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     </div>
   </div>
 </header>
-<div style="height:100px;width:100%;"></div>
+<div style="height:101px;width:100%;"></div>
 
 <!-- HERO -->
-<section id="heroSection" style="position:relative;background:#0d1e3d;color:#fff;overflow:hidden;height:815px;display:flex;align-items:stretch;">
+<section id="heroSection" style="position:relative;background:#0d1e3d;color:#fff;overflow:hidden;min-height:calc(100vh - 101px);display:flex;align-items:center;">
   <div style="position:absolute;inset:0;z-index:0;overflow:hidden;background:#0d1e3d;">
     <div style="position:absolute;inset:0;z-index:1;background-image:url('images/slm/hero-factory-line-v2.png');background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.85;"></div>
     <video autoplay="" muted="" loop="" playsinline="" poster="images/slm/hero-factory-line-v2.png" style="position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;opacity:.55;object-position:center;">
@@ -388,16 +401,16 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
     <div style="position:absolute;inset:0;z-index:4;background:linear-gradient(100deg,rgba(13,30,61,.92) 0%,rgba(13,30,61,.75) 45%,rgba(13,30,61,.4) 75%,rgba(13,30,61,.15) 100%);"></div>
   </div>
 
-  <div style="max-width:1320px;margin:0 auto;padding:60px clamp(18px,5vw,32px);position:relative;z-index:5;width:100%;display:flex;flex-direction:column;height:100%;box-sizing:border-box;">
-    <div class="hero-grid" style="display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center;">
+  <div style="max-width:1320px;margin:0 auto;padding:60px clamp(18px,5vw,32px);position:relative;z-index:5;width:100%;">
+    <div class="hero-grid" style="display:grid;grid-template-columns:2fr 1fr;gap:60px;align-items:center;">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a3d4ff;display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;">
           <span style="padding:4px 10px;border:1px solid rgba(127,196,255,.4);border-radius:3px;color:#cfe8ff;background:rgba(127,196,255,.08);">3D PRINTING TECHNOLOGY</span>
           <span data-i18n-text='{"ko": "두 가지 방식의 3D 프린팅", "en": "Two 3D Printing Technologies", "zh": "两种3D打印方式", "jp": "2つの方式の3Dプリンティング"}'>두 가지 방식의 3D 프린팅</span>
         </div>
-        <div style="font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:600;font-size:clamp(16px,3vw,22px);margin-bottom:10px;"><span style="color:#2196f3;">AnyX-M Series · SLM</span> + <span style="color:#e8790f;">AnyX-S Series · SLA</span></div>
-        <h1 data-i18n-html='{"ko": "레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style=\"color:#7fd3ff;\">3D 프린터</span>", "en": "<span style=\"color:#7fd3ff;\">3D Printers</span> Powered by<br>Laser Control<br>Technology &amp; Software", "zh": "以激光控制技术与<br>软件完成的<br><span style=\"color:#7fd3ff;\">3D打印机</span>", "jp": "レーザー制御技術と<br>ソフトウェアで<br>完成させる <span style=\"color:#7fd3ff;\">3Dプリンター</span>"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(26px,4.6vw,50px);line-height:1.2;letter-spacing:-.02em;margin-top:0;margin-bottom:22px;color:#fff;">레이저 제어기술과<br>소프트웨어로<br>완성하는 <span style="color:#7fd3ff;">3D 프린터</span></h1>
-        <p data-i18n-text='{"ko": "SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n레이저 제어 기술과 전용 소프트웨어로 구동합니다.", "en": "SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by laser control technology and dedicated software.", "zh": "SLM金属积层(AnyX-M系列)与SLA光固化(AnyX-S系列)——\n以激光控制技术与专用软件驱动。", "jp": "SLM金属積層(AnyX-M Series)とSLA光硬化(AnyX-S Series) —\nレーザー制御技術と専用ソフトウェアで駆動します。"}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.75;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-style:italic;font-weight:600;font-size:clamp(16px,4vw,24px);margin-bottom:8px;"><span style="color:#2196f3;">AnyX-M Series · SLM</span> <span style="color:#b8c4d9;">+</span> <span style="color:#e8790f;">AnyX-S Series · SLA</span></div>
+        <h1 data-i18n-html='{"ko":"레이저 제어기술과 소프트웨어로<br>완성하는 <span style=\"color:#7fd3ff;\">3D 프린터</span>","en":"3D Printers Powered by<br><span style=\"color:#7fd3ff;\">Laser Control and Software</span>","zh":"以激光控制技术与软件完成的<br><span style=\"color:#7fd3ff;\">3D打印机</span>","jp":"レーザー制御技術とソフトウェアで<br>完成させる <span style=\"color:#7fd3ff;\">3Dプリンター</span>"}' style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(24px,3.4vw,46px);line-height:1.18;letter-spacing:-.02em;margin-bottom:22px;color:#fff;word-break:keep-all;">레이저 제어기술과 소프트웨어로<br>완성하는 <span style="color:#7fd3ff;">3D 프린터</span></h1>
+        <p data-i18n-text='{"ko":"SLM 금속 적층(AnyX-M Series)과 SLA 광경화(AnyX-S Series) —\n레이저 제어 기술과 전용 소프트웨어로 구동합니다.","en":"SLM Metal AM (AnyX-M Series) and SLA Photopolymerization (AnyX-S Series) —\nPowered by laser control technology and dedicated software.","zh":"SLM金属积层(AnyX-M系列)与SLA光固化(AnyX-S系列)——\n以激光控制技术与专用软件驱动。","jp":"SLM金属積層(AnyX-M Series)とSLA光硬化(AnyX-S Series) —\nレーザー制御技術と専用ソフトウェアで駆動します。"}' style="color:#b8c4d9;font-size:15px;max-width:540px;margin-bottom:32px;line-height:1.7;">
           <strong style="color:#7fd3ff;">SLM 금속 적층(AnyX-M Series)</strong>과 <strong style="color:#7fd3ff;">SLA 광경화(AnyX-S Series)</strong> —<br>
           레이저 제어 기술과 전용 소프트웨어로 구동합니다.
         </p>
@@ -420,16 +433,17 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
         </div>
       </div>
 
+      <!-- Right column is left empty to expose the right-aligned background image -->
       <!-- Right column: AnyX-150 실사 하이라이트 영상 (LMS 히어로 영상과 동일한 위치/스타일) -->
       <div class="hero-video-3dp">
-        <video autoplay muted playsinline preload="auto" poster="images/video/hero-anyx150-poster.jpg">
-          <source src="video/hero-anyx150-clips.mp4" type="video/mp4">
+        <video autoplay muted playsinline preload="auto" poster="images/video/hero-3dp-poster.jpg">
+          <source src="video/hero-3dp.mp4" type="video/mp4">
         </video>
         <div class="hero-video-cap">AnyX-150 출력 하이라이트</div>
       </div>
     </div>
 
-    <div style="position:relative;z-index:1;margin-top:auto;margin-bottom:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);overflow:hidden;flex-shrink:0;">
+    <div style="position:relative;z-index:1;margin-top:60px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);overflow:hidden;">
       <div data-i18n-text='{"ko": "주요 고객사", "en": "KEY CUSTOMERS", "zh": "主要客户", "jp": "KEY CUSTOMERS"}' style="font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;color:#a3d4ff;margin-bottom:18px;text-transform:uppercase;">주요 고객사</div>
       <div class="hero-marquee" style="display:flex;align-items:center;width:max-content;animation:marqueeScroll 38s linear infinite;">
         <!-- Group 1 -->
@@ -922,7 +936,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
             </div>
           </sc-for>
         </div>
-        <a href="#contact" style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#1e5aa8;padding:6px 10px;border:1px solid #bbdefb;border-radius:3px;display:inline-block;" data-i18n-text="{&quot;ko&quot;: &quot;CS_Laser 3D 매뉴얼 · PDF&quot;, &quot;en&quot;: &quot;CS_Laser 3D Manual · PDF&quot;, &quot;zh&quot;: &quot;CS_Laser 3D手册 · PDF&quot;, &quot;jp&quot;: &quot;CS_Laser 3D マニュアル · PDF&quot;}">CS_Laser 3D 매뉴얼 · PDF</a>
+        <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;" style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#1e5aa8;padding:6px 10px;border:1px solid #bbdefb;border-radius:3px;display:inline-block;" data-i18n-text="{&quot;ko&quot;: &quot;CS_Laser 3D 매뉴얼 · 자료 문의&quot;, &quot;en&quot;: &quot;CS_Laser 3D Manual · Inquire&quot;, &quot;zh&quot;: &quot;CS_Laser 3D手册 · 资料咨询&quot;, &quot;jp&quot;: &quot;CS_Laser 3D マニュアル · 資料問い合わせ&quot;}">CS_Laser 3D 매뉴얼 · 자료 문의</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
         <img src="images/software/소프트웨어.png" alt="CS_Laser 3D software" style="width:100%;height:auto;object-fit:contain;mix-blend-mode:multiply;">
