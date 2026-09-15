@@ -436,7 +436,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
       <!-- Right column is left empty to expose the right-aligned background image -->
       <!-- Right column: AnyX-150 실사 하이라이트 영상 (LMS 히어로 영상과 동일한 위치/스타일) -->
       <div class="hero-video-3dp">
-        <video autoplay muted playsinline preload="auto" poster="images/video/hero-3dp-poster.jpg">
+        <video muted playsinline preload="auto" poster="images/video/hero-3dp-poster.jpg">
           <source src="video/hero-3dp.mp4" type="video/mp4">
         </video>
         <div class="hero-video-cap">AnyX-M180 적층 하이라이트</div>
@@ -1770,7 +1770,10 @@ window.addEventListener("load", cscamApplyFamilyLinks);
     // 네이티브 loop는 끝점 부근에서 브라우저가 정지해버리는 경우가 있어 직접 제어로 대체
     video.loop = false;
     var restarting = false;
+    // Laser(engraving) 히어로처럼 poster 이미지를 잠깐 보여준 뒤 영상을 시작한다.
+    var started = false;
     var tryPlay = function () {
+      if (!started) return;
       var p = video.play();
       if (p && typeof p.catch === "function") p.catch(function () { /* 이 시점 실패는 무시, 다음 재시도에서 성공하면 됨 */ });
     };
@@ -1792,6 +1795,8 @@ window.addEventListener("load", cscamApplyFamilyLinks);
     [300, 1000, 2500, 5000].forEach(function (delay) {
       setTimeout(function () { if (video.paused) tryPlay(); }, delay);
     });
+    // poster 이미지를 약 0.6초 보여준 뒤 재생 시작
+    setTimeout(function () { started = true; tryPlay(); }, 600);
     // 반복 재생: ended 이벤트가 주된 트리거
     video.addEventListener("ended", restart);
     // ended가 간헐적으로 안 걸리는 파일/브라우저 조합을 대비해, 끝부분에 도달하면 timeupdate로도 강제 재시작
