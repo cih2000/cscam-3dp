@@ -1406,36 +1406,12 @@ class Component extends DCLogic {
   }
 </style>
 
-<!-- Back to top button -->
+<!-- Back to top button removed (overlapped with chatbot icon) -->
 <style>
-  .top-btn-3dp {
-    position: fixed;
-    right: 36px;
-    bottom: 28px;
-    z-index: 190;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #fff;
-    color: #1e5aa8;
-    border: 1px solid #e2e6ec;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,.12);
-    cursor: pointer;
-    transition: all .3s ease;
-  }
-  .top-btn-3dp:hover {
-    background: #eaf3fc;
-    transform: translateY(-3px);
-  }
   #ai-chatbot-widget {
     display: none !important;
   }
 </style>
-<button type="button" class="top-btn-3dp" onclick="scrollToTop()" aria-label="Back to top">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-</button>
 
 <div id="ai-chatbot-widget" style="font-family:'Noto Sans KR',sans-serif;">
   <!-- Chatbot floating button -->
